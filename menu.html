@@ -1,0 +1,184 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Ambur Biryani Restaurant - Menu</title>
+    <link rel="stylesheet" href="style.css">
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      margin: 0;
+      padding: 0;
+      background: #faf4f0;
+      color: #333;
+    }
+    header {
+      background: #b32d2e;
+      color: white;
+      text-align: center;
+      padding: 20px;
+    }
+    nav {
+      text-align: center;
+      margin: 15px 0;
+    }
+    nav button {
+      margin: 5px;
+      padding: 10px 18px;
+      border: none;
+      border-radius: 5px;
+      background: #b32d2e;
+      color: white;
+      cursor: pointer;
+      transition: 0.3s;
+    }
+    nav button:hover {
+      background: #8f1f1f;
+    }
+    .menu-container {
+      max-width: 1100px;
+      margin: auto;
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+      gap: 20px;
+      padding: 20px;
+    }
+    .card {
+      background: white;
+      border-radius: 10px;
+      overflow: hidden;
+      box-shadow: 0 2px 6px rgba(0,0,0,0.1);
+      text-align: center;
+      transition: transform 0.3s;
+    }
+    .card:hover {
+      transform: scale(1.05);
+    }
+    .card img {
+      width: 100%;
+      height: 180px;
+      object-fit: cover;
+    }
+    .card h3 {
+      margin: 10px 0 5px;
+      color: #b32d2e;
+    }
+    .card p {
+      margin: 5px 0 15px;
+      font-weight: bold;
+    }
+    .hidden {
+      display: none;
+    }
+  </style>
+</head>
+<body>
+  <header>
+    <h1>Ambur Biryani Restaurant</h1>
+    <p>Authentic Taste of Ambur</p>
+
+    <nav>
+    <a href="index.html">Home</a>
+    <a href="menu.html">Menu</a>
+    <a href="about.html">About</a>
+    <a href="reservation.html">Reservation</a>
+  </nav>
+  </header>
+
+  <!-- Filter Buttons -->
+  <nav>
+    <button onclick="filterMenu('all')">All</button>
+    <button onclick="filterMenu('biryani')">Biryani</button>
+    <button onclick="filterMenu('starters')">Starters</button>
+    <button onclick="filterMenu('gravies')">Gravies</button>
+    <button onclick="filterMenu('desserts')">Desserts</button>
+  </nav>
+
+  <!-- Menu Items -->
+  <div class="menu-container">
+
+    <!-- Biryani -->
+    <div class="card biryani">
+      <img src="chicken-biryani.jpg" alt="Chicken Biryani">
+      <h3>Ambur Chicken Biryani</h3>
+      <p>₹220</p>
+    </div>
+
+    <div class="card biryani">
+      <img src="Mutton.jpg" alt="Mutton Biryani">
+      <h3>Ambur Mutton Biryani</h3>
+      <p>₹280</p>
+    </div>
+
+    <div class="card biryani">
+      <img src="Fish Biriyani.jpg" alt="Fish Biryani">
+      <h3>Ambur Fish Biryani</h3>
+      <p>₹250</p>
+    </div>
+
+    <!-- Starters -->
+    <div class="card starters">
+      <img src="chilli.JPG" alt="Chicken 65">
+      <h3>Chicken 65</h3>
+      <p>₹150</p>
+    </div>
+
+    <div class="card starters">
+      <img src="Paneer-65.jpg" alt="Paneer 65">
+      <h3>Paneer 65</h3>
+      <p>₹140</p>
+    </div>
+
+    <!-- Gravies -->
+    <div class="card gravies">
+      <img src="Paneer.avif" alt="Paneer Butter Masala">
+      <h3>Paneer Butter Masala</h3>
+      <p>₹150</p>
+    </div>
+
+    <div class="card gravies">
+      <img src="gravy.avif" alt="Chicken Curry">
+      <h3>Chicken Curry</h3>
+      <p>₹140</p>
+    </div>
+
+
+    <!-- Desserts -->
+    <div class="card desserts">
+      <img src="bread-halwa.jpg" alt="Gulab Jamun">
+      <h3>Bread Halwa</h3>
+      <p>₹60</p>
+    </div>
+    <div class="card desserts">
+      <img src="jamun.webp" alt="Gulab Jamun">
+      <h3>Gulab Jamun</h3>
+      <p>₹60</p>
+    </div>
+
+    <div class="card desserts">
+      <img src="Falooda.jpg" alt="Falooda">
+      <h3>Falooda</h3>
+      <p>₹120</p>
+    </div>
+
+  </div>
+
+  <script>
+    function filterMenu(category) {
+      let items = document.querySelectorAll(".card");
+      items.forEach(item => {
+        if (category === "all") {
+          item.classList.remove("hidden");
+        } else {
+          if (item.classList.contains(category)) {
+            item.classList.remove("hidden");
+          } else {
+            item.classList.add("hidden");
+          }
+        }
+      });
+    }
+  </script>
+</body>
+</html>
